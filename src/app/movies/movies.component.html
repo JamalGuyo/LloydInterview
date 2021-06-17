@@ -1,0 +1,19 @@
+<div class="container">
+  <div class="card" *ngFor="let movie of movies" style="width: 18rem">
+    <img [src]="movie.Poster" class="card-img-top" [alt]="movie.Title" />
+    <div class="card-body">
+      <p class="header"></p>
+      <h3 class="movie-title">{{ movie.Title }}</h3>
+      <div class="movie-info">
+        <div class="label">
+          <span>Type: </span>
+          <span>Year</span>
+        </div>
+        <div class="content">
+          <p>{{ movie.Type }}</p>
+          <p>{{ movie.Year }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
