@@ -8,6 +8,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { SearchComponent } from './search/search.component';
 import { MoviesComponent } from './movies/movies.component';
+import { NavComponent } from './nav/nav.component';
 
 // routes
 const routes: Routes = [
@@ -17,7 +18,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  declarations: [AppComponent, SearchComponent, MoviesComponent],
+  declarations: [AppComponent, SearchComponent, MoviesComponent, NavComponent],
   imports: [
     BrowserModule,
     FormsModule,
