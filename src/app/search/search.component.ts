@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-search',
@@ -7,7 +8,7 @@ import { NgForm } from '@angular/forms';
     <div class="cover">
       <div class="container">
         <h1 class="heading">
-          Search unlimited number of movies, TV shows and more. {{ searchTerm }}
+          Search unlimited number of movies, TV shows and more.
         </h1>
         <h2>Ready to search? Type in the movie title and search</h2>
         <form #form="ngForm" (ngSubmit)="onSubmit(form)">
@@ -90,13 +91,11 @@ import { NgForm } from '@angular/forms';
   ],
 })
 export class SearchComponent implements OnInit {
-  // get input data
-  searchTerm = '';
-  constructor() {}
+  constructor(private router: Router) {}
 
   ngOnInit(): void {}
 
   onSubmit(form: NgForm): void {
-    this.searchTerm = form.value.search;
+    this.router.navigate(['/result', form.value.search]);
   }
 }
