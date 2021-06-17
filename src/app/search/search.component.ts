@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-search',
@@ -6,17 +7,29 @@ import { Component, OnInit } from '@angular/core';
     <div class="cover">
       <div class="container">
         <h1 class="heading">
-          Search unlimited number of movies, TV shows and more.
+          Search unlimited number of movies, TV shows and more. {{ searchTerm }}
         </h1>
         <h2>Ready to search? Type in the movie title and search</h2>
-        <form>
+        <form #form="ngForm" (ngSubmit)="onSubmit(form)">
           <input
             type="text"
+            name="search"
             class="form-control"
             placeholder="search movie..."
+            #searchInput="ngModel"
+            ngModel
+            required
           />
-          <button class="btn btn-danger">search</button>
+          <input
+            type="submit"
+            class="button btn btn-danger"
+            [disabled]="form.invalid"
+            value="search"
+          />
         </form>
+        <div class="err" [hidden]="searchInput.untouched || searchInput.valid">
+          Movie title is required to search!
+        </div>
       </div>
     </div>
   `,
@@ -66,15 +79,24 @@ import { Component, OnInit } from '@angular/core';
         height: 3.7rem;
         border-radius: 0px;
       }
-      button {
+      .button {
         border-radius: 0px;
         width: 7rem;
+      }
+      .err {
+        color: rgb(220, 52, 68);
       }
     `,
   ],
 })
 export class SearchComponent implements OnInit {
+  // get input data
+  searchTerm = '';
   constructor() {}
 
   ngOnInit(): void {}
+
+  onSubmit(form: NgForm): void {
+    this.searchTerm = form.value.search;
+  }
 }
