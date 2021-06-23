@@ -9,12 +9,17 @@ import { AppComponent } from './app.component';
 import { SearchComponent } from './search/search.component';
 import { MoviesComponent } from './movies/movies.component';
 import { NavComponent } from './nav/nav.component';
+import { MovieResolver } from './movies/movie.resolver';
 
 // routes
 const routes: Routes = [
   { path: '', redirectTo: 'search', pathMatch: 'full' },
   { path: 'search', component: SearchComponent },
-  { path: 'result/:id', component: MoviesComponent },
+  {
+    path: 'result/:id',
+    component: MoviesComponent,
+    resolve: { movies: MovieResolver },
+  },
 ];
 
 @NgModule({
