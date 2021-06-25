@@ -20,6 +20,7 @@ const routes: Routes = [
     component: MoviesComponent,
     resolve: { movies: MovieResolver },
   },
+  {path:'**', redirectTo:'search', pathMatch:'full'}
 ];
 
 @NgModule({
