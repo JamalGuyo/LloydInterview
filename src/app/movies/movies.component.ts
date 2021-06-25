@@ -9,7 +9,12 @@ import { MovieService } from '../movie.service';
 })
 export class MoviesComponent implements OnInit {
   searchTerm: any = '';
-  movies = [];
+  movies = [{
+    Poster:'',
+    Title:'',
+    Type:'',
+    Year:''
+  }];
   constructor(
     private route: ActivatedRoute,
     private movieService: MovieService
