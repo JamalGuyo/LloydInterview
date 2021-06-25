@@ -1,27 +1,26 @@
 # MovieApp
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.0.6.
+This project was developed using Angular, Bootstrap, OMDBapi
 
-## Development server
+## Get Started
+1. `git clone <the movie app>`
+2. `npm install` | `yarn install`
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+3. Run `ng serve` | `yarn start` | `npm start` for a dev server. Navigate to `http://localhost:4200/` on your browser
 
-## Code scaffolding
+## HOW IT WORKS
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+The movie app has two pages. One for searching and the other for displaying results of the search.
 
-## Build
+## Search Page
+The search page is inspired by the simplicity of the netflix landingpage
+![home](https://user-images.githubusercontent.com/20768029/123385313-12175480-d59e-11eb-9b6d-ee0e46f53020.png)
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+## ResultPage
+The result page shows the movie poster, title, type and year of the movies relating to the search
+![result](https://user-images.githubusercontent.com/20768029/123385422-307d5000-d59e-11eb-9f8b-bd6cef7de209.png)
 
-## Running unit tests
+## Validation
+The search input uses a simple validation to ensure that it is not empty. The search button is also disabled until the validation passes
+![error](https://user-images.githubusercontent.com/20768029/123385568-5b67a400-d59e-11eb-9cd1-01b14697b606.png)
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
